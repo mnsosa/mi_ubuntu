@@ -9,6 +9,9 @@ Esto para no quedar atado a una versión particular de todo.
 
 ## Aplicar (pc destino)
 - instalar extensiones de EGO (ver `manifest/extensions.md`)
+- OpenCode/opencode:
+  - copiar/pegar el JSON del repo `opencode/opencode.json` a `~/.config/opencode/opencode.json`
+  - o correr `./scripts/apply.sh` y aceptar la opción de opencode
 - `./scripts/apply.sh`
 - logout/login (recomendado)
 - tools extra: ver `manifest/tools.md`
