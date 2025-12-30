@@ -193,23 +193,52 @@ PY
   fi
 fi
 
-# OpenCode / opencode plugins (safe: only plugin package names)
+# OpenCode / opencode config + plugins
 
 : > "$ROOT_DIR/manifest/opencode-plugins.txt"
+
 if [[ -f "$HOME/.config/opencode/opencode.json" ]]; then
-  python3 - <<'PY' "$HOME/.config/opencode/opencode.json" > "$ROOT_DIR/manifest/opencode-plugins.txt"
+  python3 - <<'PY' "$HOME/.config/opencode/opencode.json" "$ROOT_DIR/manifest/opencode-plugins.txt" "$ROOT_DIR/opencode/opencode.json"
 import json
+import re
 import sys
+from pathlib import Path
 
-path = sys.argv[1]
-with open(path, "r", encoding="utf-8") as f:
-    data = json.load(f)
+src_path = Path(sys.argv[1])
+plugins_out = Path(sys.argv[2])
+config_out = Path(sys.argv[3])
 
+raw = src_path.read_text(encoding="utf-8", errors="ignore")
+data = json.loads(raw or "{}")
+
+# Plugins list (for quick installs)
 plugins = data.get("plugin", [])
+plugin_lines = []
 if isinstance(plugins, list):
     for item in plugins:
         if isinstance(item, str) and item.strip():
-            print(item.strip())
+            plugin_lines.append(item.strip())
+plugins_out.write_text("\n".join(plugin_lines) + ("\n" if plugin_lines else ""), encoding="utf-8")
+
+# Sanitized config for public repo: remove obvious secrets recursively
+secret_key_re = re.compile(r"(api[-_]?key|token|secret|password|passwd|auth|credential)", re.IGNORECASE)
+
+def sanitize(obj):
+    if isinstance(obj, dict):
+        out = {}
+        for k, v in obj.items():
+            if isinstance(k, str) and secret_key_re.search(k):
+                continue
+            out[k] = sanitize(v)
+        return out
+    if isinstance(obj, list):
+        return [sanitize(v) for v in obj]
+    return obj
+
+sanitized = sanitize(data)
+config_out.write_text(json.dumps(sanitized, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+print(f"Wrote plugins: {plugins_out}")
+print(f"Wrote config:  {config_out}")
 PY
 fi
 

@@ -18,5 +18,6 @@ Esto para no quedar atado a una versión particular de todo.
 - atajos de teclado (dconf: media-keys + wm + mutter)
 - settings de extensiones (dconf)
 - candidatos de paquetes (apt + snap) desde tus favoritos (ver `manifest/apt-packages.txt` y `manifest/snaps.txt`)
+- config de OpenCode/opencode (ver `opencode/opencode.json`)
 - plugins de OpenCode/opencode (ver `manifest/opencode-plugins.txt`)
 - uv (ver `manifest/tools.md`)

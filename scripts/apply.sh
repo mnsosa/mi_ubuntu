@@ -58,10 +58,24 @@ if [[ -f "$ROOT_DIR/manifest/snaps.txt" ]] && [[ -s "$ROOT_DIR/manifest/snaps.tx
   fi
 fi
 
-# OpenCode / opencode plugins
+# OpenCode / opencode config + plugins
+
+if [[ -f "$ROOT_DIR/opencode/opencode.json" ]] && [[ -s "$ROOT_DIR/opencode/opencode.json" ]]; then
+  if confirm "Replace ~/.config/opencode/opencode.json with repo version? (backs up current)"; then
+    mkdir -p "$HOME/.config/opencode"
+
+    if [[ -f "$HOME/.config/opencode/opencode.json" ]]; then
+      ts="$(date +%Y%m%d-%H%M%S)"
+      cp "$HOME/.config/opencode/opencode.json" "$HOME/.config/opencode/opencode.json.bak.$ts"
+      printf '%s\n' "Backed up to ~/.config/opencode/opencode.json.bak.$ts"
+    fi
+
+    cp "$ROOT_DIR/opencode/opencode.json" "$HOME/.config/opencode/opencode.json"
+  fi
+fi
 
 if [[ -f "$ROOT_DIR/manifest/opencode-plugins.txt" ]] && [[ -s "$ROOT_DIR/manifest/opencode-plugins.txt" ]]; then
-  if confirm "Apply OpenCode (opencode) plugin list to ~/.config/opencode/opencode.json?"; then
+  if confirm "Ensure plugin list is applied too? (writes plugin[] into opencode.json)"; then
     mkdir -p "$HOME/.config/opencode"
 
     python3 - <<'PY' "$ROOT_DIR/manifest/opencode-plugins.txt" "$HOME/.config/opencode/opencode.json"
@@ -74,10 +88,12 @@ config_path = Path(sys.argv[2])
 
 plugins = [line.strip() for line in plugins_path.read_text(encoding="utf-8", errors="ignore").splitlines() if line.strip()]
 
+data = {"$schema": "https://opencode.ai/config.json"}
 if config_path.exists():
-    data = json.loads(config_path.read_text(encoding="utf-8", errors="ignore") or "{}")
-else:
-    data = {"$schema": "https://opencode.ai/config.json"}
+    try:
+        data.update(json.loads(config_path.read_text(encoding="utf-8", errors="ignore") or "{}"))
+    except Exception:
+        pass
 
 data["plugin"] = plugins
 config_path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
