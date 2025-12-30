@@ -1,0 +1,1 @@
+['caffeine@patapon.info', 'pomodoro@arun.codito.in', 'floating-dock@nandoferreira_prof@hotmail.com', 'Resource_Monitor@Ory0n', 'ubuntu-dock@ubuntu.com', 'ding@rastersoft.com', 'cron@status.jobz', 'docker@stickman_0x00.com', 'ubuntu-appindicators@ubuntu.com', 'tiling-assistant@ubuntu.com']

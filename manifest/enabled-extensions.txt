@@ -1,0 +1,6 @@
+caffeine@patapon.info
+docker@stickman_0x00.com
+Resource_Monitor@Ory0n
+tiling-assistant@ubuntu.com
+ubuntu-appindicators@ubuntu.com
+ubuntu-dock@ubuntu.com

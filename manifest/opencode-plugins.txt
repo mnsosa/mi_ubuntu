@@ -1,0 +1,3 @@
+opencode-openai-codex-auth@4.1.0
+opencode-gemini-auth
+opencode-cursor-auth@1.0.16
