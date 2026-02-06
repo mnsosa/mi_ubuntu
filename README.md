@@ -24,3 +24,6 @@ Esto para no quedar atado a una versión particular de todo.
 - config de OpenCode/opencode (ver `opencode/opencode.json`)
 - plugins de OpenCode/opencode (ver `manifest/opencode-plugins.txt`)
 - uv (ver `manifest/tools.md`)
+
+## Docs
+- snapshot en lenguaje natural: `manifest/pc.md`

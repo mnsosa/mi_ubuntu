@@ -1,1 +1,1 @@
-['caffeine@patapon.info', 'pomodoro@arun.codito.in', 'floating-dock@nandoferreira_prof@hotmail.com', 'Resource_Monitor@Ory0n', 'ubuntu-dock@ubuntu.com', 'ding@rastersoft.com', 'cron@status.jobz', 'docker@stickman_0x00.com', 'ubuntu-appindicators@ubuntu.com', 'tiling-assistant@ubuntu.com']
+['ding@rastersoft.com', 'ubuntu-dock@ubuntu.com', 'tiling-assistant@ubuntu.com', 'caffeine@patapon.info', 'Resource_Monitor@Ory0n', 'lockscreen-extension@pratap.fastmail.fm', 'CustomizeClockOnLockScreen@pratap.fastmail.fm', 'docker@stickman_0x00.com']

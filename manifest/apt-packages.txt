@@ -1,16 +1,3 @@
 brave-browser
-coreutils
-curl
-docker-ce-cli
-git
 gnome-terminal
-hugo
-humanity-icon-theme
-iputils-ping
-make
 nautilus
-ncurses-bin
-openssh-client
-python3-minimal
-sudo
-tmux

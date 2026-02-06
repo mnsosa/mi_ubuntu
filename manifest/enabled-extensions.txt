@@ -1,6 +1,9 @@
 caffeine@patapon.info
 docker@stickman_0x00.com
 Resource_Monitor@Ory0n
+CustomizeClockOnLockScreen@pratap.fastmail.fm
+lockscreen-extension@pratap.fastmail.fm
+ding@rastersoft.com
 tiling-assistant@ubuntu.com
 ubuntu-appindicators@ubuntu.com
 ubuntu-dock@ubuntu.com

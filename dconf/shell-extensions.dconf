@@ -1,6 +1,43 @@
 [caffeine]
 cli-toggle=true
 countdown-timer=0
+indicator-position-max=3
+user-enabled=true
+
+[dash-to-dock]
+dock-fixed=false
+dock-position='BOTTOM'
+extend-height=false
+show-mounts=false
+show-mounts-network=false
+show-mounts-only-mounted=true
+show-trash=false
+
+[ding]
+check-x11wayland=true
+icon-size='standard'
+show-home=false
+
+[lockscreen-extension]
+background-image-path-1='file:///home/mnsosa/.local/share/backgrounds/2026-01-21-18-47-36-fantasy1.jpg'
+background-size-1='center'
+gradient-direction-1='none'
+primary-color-1='black'
+user-background-1=true
+
+[tiling-assistant]
+active-window-hint-color='rgb(211,70,21)'
+last-version-installed=46
+overridden-settings={'org.gnome.mutter.edge-tiling': <@mb nothing>, 'org.gnome.mutter.keybindings.toggle-tiled-left': <@mb nothing>, 'org.gnome.mutter.keybindings.toggle-tiled-right': <@mb nothing>}
+tile-bottomleft-quarter=['<Super><Shift>j']
+tile-bottomright-quarter=['<Super><Shift>l']
+tile-topleft-quarter=['<Super><Shift>h']
+tile-topright-quarter=['<Super><Shift>k']
+tiling-popup-all-workspace=true
+
+[tiling-assistant/caffeine]
+cli-toggle=true
+countdown-timer=0
 duration-timer=4
 duration-timer-list=[1800, 3000, 8100]
 indicator-position-max=3
@@ -8,7 +45,7 @@ toggle-state=false
 use-custom-duration=true
 user-enabled=true
 
-[dash-to-dock]
+[tiling-assistant/dash-to-dock]
 always-center-icons=true
 apply-custom-theme=false
 background-color='rgb(36,31,49)'
@@ -33,12 +70,12 @@ show-mounts=false
 show-show-apps-button=false
 show-trash=false
 
-[ding]
+[tiling-assistant/ding]
 check-x11wayland=true
 icon-size='small'
 show-home=false
 
-[tiling-assistant]
+[tiling-assistant/tiling-assistant]
 activate-layout0=@as []
 activate-layout1=@as []
 activate-layout2=@as []
@@ -81,7 +118,7 @@ tiling-popup-all-workspace=true
 toggle-always-on-top=@as []
 toggle-tiling-popup=@as []
 
-[tilingshell]
+[tiling-assistant/tilingshell]
 last-version-name-installed='17.0'
 layouts-json='[{"id":"Layout 1","tiles":[{"x":0,"y":0,"width":0.22,"height":0.5,"groups":[1,2]},{"x":0,"y":0.5,"width":0.22,"height":0.5,"groups":[1,2]},{"x":0.22,"y":0,"width":0.56,"height":1,"groups":[2,3]},{"x":0.78,"y":0,"width":0.22,"height":0.5,"groups":[3,4]},{"x":0.78,"y":0.5,"width":0.22,"height":0.5,"groups":[3,4]}]},{"id":"Layout 2","tiles":[{"x":0,"y":0,"width":0.22,"height":1,"groups":[1]},{"x":0.22,"y":0,"width":0.56,"height":1,"groups":[1,2]},{"x":0.78,"y":0,"width":0.22,"height":1,"groups":[2]}]},{"id":"Layout 3","tiles":[{"x":0,"y":0,"width":0.33,"height":1,"groups":[1]},{"x":0.33,"y":0,"width":0.67,"height":1,"groups":[1]}]},{"id":"Layout 4","tiles":[{"x":0,"y":0,"width":0.67,"height":1,"groups":[1]},{"x":0.67,"y":0,"width":0.33,"height":1,"groups":[1]}]},{"id":"366209984","tiles":[{"x":0,"y":0,"width":0.5022321428571429,"height":0.5047759000734754,"groups":[1,2]},{"x":0.5022321428571429,"y":0,"width":0.4977678571428573,"height":0.5040411462160176,"groups":[3,1]},{"x":0,"y":0.5047759000734754,"width":0.5022321428571429,"height":0.4952240999265246,"groups":[2,1]},{"x":0.5022321428571429,"y":0.5040411462160176,"width":0.4977678571428573,"height":0.4959588537839824,"groups":[3,1]}]}]'
 overridden-settings='{}'
