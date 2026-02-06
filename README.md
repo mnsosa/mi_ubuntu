@@ -27,3 +27,4 @@ Esto para no quedar atado a una versión particular de todo.
 
 ## Docs
 - snapshot en lenguaje natural: `manifest/pc.md`
+- zsh/oh-my-zsh: `manifest/oh-my-zsh.md`

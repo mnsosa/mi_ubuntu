@@ -48,3 +48,7 @@ Snapshot de config (sanitizada) en `opencode/opencode.json`:
 - Plugins: ver `manifest/opencode-plugins.txt`
 - Providers: OpenAI + Google (Gemini)
 - MCP: Linear (remote), GitHub (local via docker), Mercado Pago (remote), Chrome DevTools (local via npx)
+
+## Shell
+
+- Zsh + Oh My Zsh: ver `manifest/oh-my-zsh.md`
